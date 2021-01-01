@@ -19,5 +19,13 @@ pipeline {
       }
     }
 
+    stage('') {
+      steps {
+        sh '''pwd
+ls
+ls -la'''
+      }
+    }
+
   }
 }
