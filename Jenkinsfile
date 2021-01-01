@@ -2,8 +2,19 @@ pipeline {
   agent any
   stages {
     stage('demo') {
-      steps {
-        echo 'ok'
+      parallel {
+        stage('demo') {
+          steps {
+            echo 'ok'
+          }
+        }
+
+        stage('') {
+          steps {
+            sh 'ls -l'
+          }
+        }
+
       }
     }
 
@@ -19,7 +30,7 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('error') {
       steps {
         sh '''pwd
 ls
